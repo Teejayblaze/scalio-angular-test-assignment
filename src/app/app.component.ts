@@ -10,12 +10,13 @@ import { Users } from './models/users';
 export class AppComponent implements OnInit {
   key: string = 'avatar_url';
   reverse: boolean = false;
+  users: Array<Users> = [];
 
   constructor(private github: GithubService) {}
 
   ngOnInit() {
     this.github.doGetServices('foo').subscribe(response => {
-      console.log(response);
+      this.users = response.items;
     });
   }
 

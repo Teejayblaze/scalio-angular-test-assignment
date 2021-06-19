@@ -7,11 +7,17 @@ import { HelloComponent } from './hello.component';
 import { SearchComponent } from './components/search/search.component';
 import { ResultsComponent } from './components/results/results.component';
 import { GithubService } from './github.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, SearchComponent, ResultsComponent ],
-  bootstrap:    [ AppComponent ],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    SearchComponent,
+    ResultsComponent
+  ],
+  bootstrap: [AppComponent],
   providers: [GithubService]
 })
-export class AppModule { }
+export class AppModule {}
