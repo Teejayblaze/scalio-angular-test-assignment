@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.github.doGetServices('foo').subscribe(response => {
-      this.users = response.items;
+      this.users = response['items'];
+      console.log(this.users);
     });
   }
 
