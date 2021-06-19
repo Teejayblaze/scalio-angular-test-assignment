@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Users } from './models/users';
 
 @Injectable()
 export class GithubService {
