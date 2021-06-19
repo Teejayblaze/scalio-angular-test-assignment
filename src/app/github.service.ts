@@ -8,6 +8,6 @@ export class GithubService {
   constructor(private http: HttpClient) {}
 
   doGetServices(q: string) {
-    this.http.get<Users[]>(URL + `?q=${q} in:login`);
+    return this.http.get<Users[]>(URL + `?q=${q} in:login`);
   }
 }
