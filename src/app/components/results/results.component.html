@@ -1,3 +1,20 @@
-<p>
-results works!
-</p>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th (click)="sort('avatar_url')">Avatar URL&nbsp;<i class="fa fa-sort"></i></th>
+        <th (click)="sort('login')">Login&nbsp;<i class="fa fa-sort"></i></th>
+        <th (click)="sort('type')">Type&nbsp;<i class="fa fa-sort"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let user of users | orderBy: ordIdx : reverse | paginate: {itemsPerPage: itemPerPage, currentPage: page};">
+        <td>{{ user.avatar_url }}</td>
+        <td>{{ user.login }}</td>
+        <td>{{ user.type }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

@@ -8,25 +8,24 @@ import { Users } from './models/users';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  ordIdx: string = 'login';
-  reverse: boolean = false;
+  // ordIdx: string = 'login';
+  // reverse: boolean = false;
   users: Array<Users> = [];
-  page: number = 1;
-  itemPerPage: number = 9;
+  // page: number = 1;
+  // itemPerPage: number = 9;
 
   constructor(private github: GithubService) {}
 
   ngOnInit() {
     this.github.doGetServices('foo').subscribe((users: Array<Users>) => {
       this.users = users;
-      console.log(this.users);
     });
   }
 
   name = 'Angular ' + VERSION.major;
 
-  sort(key: string = null) {
-    this.ordIdx = key;
-    this.reverse = !this.reverse;
-  }
+  // sort(key: string = null) {
+  //   this.ordIdx = key;
+  //   this.reverse = !this.reverse;
+  // }
 }
