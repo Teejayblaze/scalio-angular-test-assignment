@@ -8,9 +8,11 @@ import { Users } from './models/users';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  ordIdx: string = 'avatar_url';
+  ordIdx: string = 'login';
   reverse: boolean = false;
   users: Array<Users> = [];
+  page: number = 1;
+  itemPerPage: number = 9;
 
   constructor(private github: GithubService) {}
 
