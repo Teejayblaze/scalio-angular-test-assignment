@@ -3,7 +3,7 @@ export class Users {
   login: string;
   type: string;
 
-  constructor(obj?: any) {
+  constructor(obj: any) {
     Object.assign(this, obj);
   }
 }

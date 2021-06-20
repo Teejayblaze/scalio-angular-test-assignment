@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/dist/types/operators';
+import { Observable } from 'rxjs/dist/types';
+import 'rxjs/operator/map';
 import { Users } from './models/users';
 
 @Injectable()
@@ -11,8 +12,6 @@ export class GithubService {
 
   doGetServices(q: string): Observable<Users[]> {
     this.URL = encodeURI(this.URL + `?q=${q} in:login`);
-    return this.http
-      .get<Users[]>(this.URL)
-      .pipe(map(value => new Users(value)));
+    return this.http.get(this.URL).map((res: Response) => res.json().items.);
   }
 }
