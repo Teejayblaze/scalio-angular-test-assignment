@@ -8,9 +8,17 @@ import { SearchComponent } from './components/search/search.component';
 import { ResultsComponent } from './components/results/results.component';
 import { GithubService } from './github.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    Ng2OrderModule,
+    NgxPaginationModule
+  ],
   declarations: [
     AppComponent,
     HelloComponent,

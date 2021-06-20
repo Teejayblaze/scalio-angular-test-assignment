@@ -8,23 +8,23 @@ import { Users } from './models/users';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  key: string = 'avatar_url';
+  ordIdx: string = 'avatar_url';
   reverse: boolean = false;
   users: Array<Users> = [];
 
   constructor(private github: GithubService) {}
 
   ngOnInit() {
-    this.github.doGetServices('foo').subscribe(response => {
-      console.log(response);
-      this.users.push(response);
+    this.github.doGetServices('foo').subscribe((users: Array<Users>) => {
+      this.users = users;
+      console.log(this.users);
     });
   }
 
   name = 'Angular ' + VERSION.major;
 
   sort(key: string = null) {
-    this.key = key;
+    this.ordIdx = key;
     this.reverse = !this.reverse;
   }
 }

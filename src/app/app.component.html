@@ -13,10 +13,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
+      <tr *ngFor="let user of users | orderBy: ordIdx : reverse">
+        <td>{{ user.avatar_url }}</td>
+        <td>{{ user.login }}</td>
+        <td>{{ user.type }}</td>
       </tr>
     </tbody>
   </table>
