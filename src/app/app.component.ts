@@ -16,11 +16,7 @@ export class AppComponent implements OnInit {
 
   constructor(private github: GithubService) {}
 
-  ngOnInit() {
-    this.github.doGetServices('foo').subscribe((users: Array<Users>) => {
-      this.users = users;
-    });
-  }
+  ngOnInit() {}
 
   name = 'Angular ' + VERSION.major;
 
@@ -28,4 +24,12 @@ export class AppComponent implements OnInit {
   //   this.ordIdx = key;
   //   this.reverse = !this.reverse;
   // }
+
+  getEmittedValue(value) {
+    if (value && value.length > 0) {
+      this.github.doGetServices(value).subscribe((users: Array<Users>) => {
+        this.users = users;
+      });
+    }
+  }
 }
