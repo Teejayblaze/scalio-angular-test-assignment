@@ -9,6 +9,8 @@ export class ResultsComponent implements OnInit {
   ordIdx: string = 'login';
   reverse: boolean = false;
   @Input() users;
+  @Input() isProcessing: boolean;
+  @Input() isEmpty: boolean;
   page: number = 1;
   itemPerPage: number = 9;
 

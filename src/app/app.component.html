@@ -1,5 +1,5 @@
 <div class="container-fluid">
   <h3 class="mb-5 mt-3 text-center">Web - Angular/ReactJS Test Assignment</h3>
   <app-search (emitter)="getEmittedValue($event)"></app-search>
-  <app-results [users]="users"></app-results>
+  <app-results [users]="users" [isProcessing]="isProcessing" [isEmpty]="isEmpty"></app-results>
 </div>
